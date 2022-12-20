@@ -4,8 +4,8 @@
 
 Pude trabalhar com factory functions e compreender melhor o seu uso, também optei por utilizar a função eval do JavaScript que é capaz de realizar as contas dispostas no display da calculadora. Foi um ótimo projeto para práticar funções e objetos e lembrar algumas práticas boas. Além disso pude converter este código usando construction function, o que deixou o código menor e mais limpo.
 
-![preview](./LT.gif)
-🔗[Clique aqui para acessar](https://pedrodevvv.github.io/Calculadora-JS/) <br>
+![preview](./LT.gif) <br>
+🔗[Clique aqui para acessar](https://pedrodevvv.github.io/Calculadora-JS/)
 ## 🛠️Tecnologias
 
 * JavaScript
