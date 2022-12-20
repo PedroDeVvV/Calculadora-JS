@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
-:root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
-}
-
 * {
   box-sizing: border-box;
   outline: 0;
@@ -13,7 +8,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--primary-color);
+  background-image: url(../img/backiee-130807.jpg);
+  background-size: cover;
   font-family: 'Open sans', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
@@ -22,13 +18,10 @@ body {
 .container {
   max-width: 640px;
   margin: 50px auto;
-  background: #fff;
+  background-color: rgb(44, 40, 40);
   padding: 20px;
   border-radius: 10px;
-}
-
-form input:focus {
-  outline: 1px solid var(--primary-color);
+  border: solid 5px black;
 }
 
 .calculadora {
@@ -37,7 +30,9 @@ form input:focus {
 }
 
 h1 {
+  color: white;
   text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 .display {
@@ -58,7 +53,8 @@ h1 {
   cursor: pointer;
 }
 
-.btn-num:hover {
+.btn-num:hover,
+.btn-del:hover {
   background-color: gray;
   transition: 0.3s;
 }
@@ -68,6 +64,15 @@ h1 {
 }
 
 .btn-eq:hover {
-background-color: green;
-transition: .3s;
+  background-color: green;
+  transition: .3s;
+}
+
+.btn-clear:hover {
+  background-color: rgb(181, 3, 3);
+  transition: .3s;
+}
+
+.btn-clear {
+  background-color: rgb(255, 0, 0);
 }

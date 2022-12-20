@@ -1,86 +1,86 @@
 function criaCalculadora() {
-    
-  return {
-      display: document.querySelector('.display'),
 
-      iniciar() {
-          this.clickBotoes();
-          this.pressionaBackSpace();
-          this.pressionaEnter();
-      },
+    return {
+        display: document.querySelector('.display'),
 
-      pressionaBackSpace() {
-          this.display.addEventListener('keydown', e => {
-              if (e.keyCode === 8) {
-                  e.preventDefault();
-                  this.apagaUm();
-              }
-          });
-      },
+        iniciar() {
+            this.clickBotoes();
+            this.pressionaBackSpace();
+            this.pressionaEnter();
+        },
 
-      pressionaEnter() {
-          this.display.addEventListener('keyup', e => {
-              if (e.keyCode === 13) {
-                  this.criaConta();
-              }
-          });
-      },
+        pressionaBackSpace() {
+            this.display.addEventListener('keydown', e => {
+                if (e.keyCode === 8) {
+                    e.preventDefault();
+                    this.apagaUm();
+                }
+            });
+        },
 
-      criaConta() {
-          let conta = this.display.value;
+        pressionaEnter() {
+            this.display.addEventListener('keyup', e => {
+                if (e.keyCode === 13) {
+                    this.criaConta();
+                }
+            });
+        },
 
-          try {
-              conta = eval(conta);
+        criaConta() {
+            let conta = this.display.value;
 
-              if (!conta) {
-                  alert('Conta inválida');
-                  return;
-              }
+            try {
+                conta = eval(conta);
 
-              this.display.value = String(conta);
-          } catch (e) {
-              alert('Conta inválida');
-              return;
-          }
-      },
+                if (!conta) {
+                    alert('Conta inválida');
+                    return;
+                }
 
-      clearDisplay() {
-          this.display.value = '';
-      },
+                this.display.value = String(conta);
+            } catch (e) {
+                alert('Conta inválida');
+                return;
+            }
+        },
 
-      apagaUm() {
-          this.display.value = this.display.value.slice(0, -1);
-      },
+        clearDisplay() {
+            this.display.value = '';
+        },
+
+        apagaUm() {
+            this.display.value = this.display.value.slice(0, -1);
+        },
 
 
-      clickBotoes() {
-          document.addEventListener('click', e => {
-              const el = e.target;
+        clickBotoes() {
+            document.addEventListener('click', e => {
+                const el = e.target;
 
-              if (el.classList.contains('btn-num')) {
-                  this.btnParaDisplay(el.innerText);
-              }
+                if (el.classList.contains('btn-num')) {
+                    this.btnParaDisplay(el.innerText);
+                }
 
-              if (el.classList.contains('btn-clear')) {
-                  this.clearDisplay();
-              }
+                if (el.classList.contains('btn-clear')) {
+                    this.clearDisplay();
+                }
 
-              if (el.classList.contains('btn-del')) {
-                  this.apagaUm();
-              }
+                if (el.classList.contains('btn-del')) {
+                    this.apagaUm();
+                }
 
-              if (el.classList.contains('btn-eq')) {
-                  this.criaConta();
-              }
+                if (el.classList.contains('btn-eq')) {
+                    this.criaConta();
+                }
 
-              this.display.focus();
-          });
-      },
+                this.display.focus();
+            });
+        },
 
-      btnParaDisplay(valor) {
-          this.display.value += valor;
-      }
-  };
+        btnParaDisplay(valor) {
+            this.display.value += valor;
+        }
+    };
 }
 
 const calculadoraFabrica = criaCalculadora();
